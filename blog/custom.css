@@ -1,0 +1,388 @@
+/* =========================================================== */
+/* 字体重置 */
+@font-face {
+  font-family: "Skell";
+  src: url(/blog/fonts/ZhuZiAWan.woff2);
+  font-display: swap;
+}
+
+body {
+  font-family: "Skell", "KaiTi", "SimHei", Arial, Helvetica, sans-serif !important;
+}
+
+.content {
+  color: #8c95aa;
+}
+
+/* =========================================================== */
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(129, 52, 175, 0.5);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bc13fe;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.4) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.4) 75%,
+    transparent 75%,
+    transparent
+  );
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #49b1f5;
+}
+
+/* 去除文章页目录滚动条 */
+#card-toc ::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================================== */
+/* 评论框中添加背景图片 */
+.vwrap {
+  background: url(/blog/img/buddha.gif) no-repeat;
+  background-position: center center;
+  background-size: 35% auto;
+}
+
+/* =========================================================== */
+/* 夜间模式样式修改 */
+/* 修改透明度 */
+#content-inner {
+  opacity: 0.7;
+}
+
+/* 修改阅读模式 */
+.read-mode #body-wrap {
+  background: #f4f4e7;
+}
+
+.read-mode #post {
+  color: #333;
+}
+
+[data-theme="dark"].read-mode #body-wrap {
+  background: #5c4f74;
+}
+
+[data-theme="dark"].read-mode #post {
+  color: #fff;
+}
+
+/* =========================================================== */
+/* 图片模糊便清晰，对所有页面的图片都生效 */
+/* 3s为加载动画的时间，1为加载动画的次数，ease-in-out为动画效果 */
+#page-header,
+#web_bg,
+#content-inner {
+  -webkit-animation: imgblur 1s 1 ease-in-out;
+  animation: imgblur 1s 1 ease-in-out;
+}
+@keyframes imgblur {
+  0% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+/*适配使用-webkit内核的浏览器 */
+@-webkit-keyframes imgblur {
+  0% {
+    -webkit-filter: blur(5px);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+  }
+}
+
+/* =========================================================== */
+/* 替换鼠标指针 */
+/* 全局默认鼠标指针 */
+body,
+html {
+  cursor: url(/blog/custom/cursor/Handwriting.cur), auto !important;
+}
+/* 悬停图片时的鼠标指针 */
+img {
+  cursor: url(/blog/custom/cursor/SizeAll.cur), auto !important;
+}
+/* 选择链接标签时的鼠标指针 */
+a:hover {
+  cursor: url(/blog/custom/cursor/Hand.cur), auto;
+}
+/* 选中输入框时的鼠标指针 */
+input:hover {
+  cursor: url(/blog/custom/cursor/IBeam.cur), auto;
+}
+/* 悬停按钮时的鼠标指针 */
+button:hover {
+  cursor: url(/blog/custom/cursor/Hand.cur), auto;
+}
+/* 悬停列表标签时的鼠标指针 */
+i:hover {
+  cursor: url(/blog/custom/cursor/Hand.cur), auto;
+}
+/* 悬停页脚链接标签（例如页脚徽标）时的鼠标指针 */
+#footer-wrap a:hover {
+  cursor: url(/blog/custom/cursor/SizeNS.cur), auto;
+}
+/* 悬停页码时的鼠标指针 */
+#pagination .page-number:hover {
+  cursor: url(/blog/custom/cursor/SizeWE.cur), auto;
+}
+/* 悬停菜单栏时的鼠标指针 */
+#nav .site-page:hover {
+  cursor: url(/blog/custom/cursor/UpArrow.cur), auto;
+}
+
+/* =========================================================== */
+/* 页脚跳动的红心 */
+#heartbeat {
+  color: red;
+  animation: iconAnimate 1.33s ease-in-out infinite;
+}
+@-moz-keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+@-webkit-keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+@-o-keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+@keyframes iconAnimate {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(0.9);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: scale(1.1);
+  }
+  50%,
+  70% {
+    transform: scale(1.1);
+  }
+}
+
+/* =========================================================== */
+/* 发光字体 */
+/* 副标题诗词发光效果 */
+#subtitle {
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe,
+    0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+}
+
+/* 标题闪烁效果 */
+#site-title {
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe,
+      0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+/* 站点名字霓虹灯效果 */
+#site-name {
+  animation: pulsate 1.5s infinite alternate;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 0.4em;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe,
+      0 0 80px #bc13fe, 0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
+  }
+
+  0% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe,
+      0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+  }
+}
+
+/* 导航菜单字体 */
+#search-button a i,
+#search-button a span,
+#menus .menus_items .menus_item a i,
+#menus .menus_items .menus_item a span,
+#toggle-menu a i,
+#page-header #site_social_icons .social-icon {
+  text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe,
+    0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+}
+
+#sidebar-menus .avatar-img {
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+}
+
+/* =========================================================== */
+/* 版权美化 */
+#post .post-copyright {
+  border: 2px solid #a696c8;
+  border-radius: 23px;
+}
+
+/* =========================================================== */
+/* 表情包 */
+/* valine 评论 */
+
+/* 去除了dark模式下头像border和padding */
+[data-theme="dark"] .v[data-class="v"] .vcards .vcard .vimg {
+  padding: 0;
+  border: none;
+}
+
+[data-theme="dark"] #post .v[data-class="v"] .vcontent img {
+  display: inline-block;
+}
+
+.v[data-class="v"] .emoji,
+.v[data-class="v"] .vemoji {
+  vertical-align: text-bottom;
+}
+
+.v[data-class="v"] .vwrap .vemojis {
+  max-height: 260px !important;
+}
+
+.v[data-class="v"] .vwrap .vemojis i[title|="menhera"] {
+  width: 22% !important;
+  margin: 5px 10px;
+}
+
+.v[data-class="v"] .vwrap .vemojis img[alt|="menhera"] {
+  max-width: 100% !important;
+}
+
+.v[data-class="v"] .vcontent .emoji[alt|="menhera"],
+.v[data-class="v"] .vcontent .vemoji[alt|="menhera"] {
+  max-width: 300px !important;
+  /* vertical-align: middle; */
+  margin: 8px 1px;
+  display: block !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .v[data-class="v"] .vwrap .vemojis i[title|="menhera"] {
+    margin: 5px 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .v[data-class="v"] .vcontent .emoji[alt|="menhera"],
+  .v[data-class="v"] .vcontent .vemoji[alt|="menhera"] {
+    max-width: calc(100% - 30px) !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .v[data-class="v"] .vwrap .vemojis {
+    max-height: 200px !important;
+  }
+  .v[data-class="v"] .vwrap .vemojis i[title|="menhera"] {
+    margin: 5px 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .v[data-class="v"] .vwrap .vemojis i[title|="menhera"] {
+    width: 21% !important;
+  }
+}
